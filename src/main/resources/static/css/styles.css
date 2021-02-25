@@ -19,8 +19,8 @@ h1 {
 }
 
 table {
-    margin: auto;
-            width: 50%;
-            padding: 10px;
-            text-align: center;
+    margin: right;
+            width: 20%;
+            padding: 3px;
+            text-align: left;
 }
