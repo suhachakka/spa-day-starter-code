@@ -20,7 +20,8 @@ public class UserController {
     }
 
     @PostMapping
-    public String processAddUserForm(Model model, @ModelAttribute @Valid User user, Errors errors, String verify) {
+//    public String processAddUserForm(Model model, @ModelAttribute @Valid User user, Errors errors, String verify) {
+    public String processAddUserForm(Model model, @ModelAttribute @Valid User user, Errors errors) {
 //        model.addAttribute("user", user);
 //        model.addAttribute("verify", verify);
 //        model.addAttribute("username", user.getUsername());
@@ -32,7 +33,7 @@ public class UserController {
 //            model.addAttribute("error", "Passwords do not match");
 //            return "user/add";
 //        }
-        model.addAttribute("verify", verify);
+       /* model.addAttribute("verify", verify);
 
         if(errors.hasErrors()){
             return "user/add";
@@ -43,12 +44,19 @@ public class UserController {
 
 
         }else {
-            System.out.println(verify);
+            //System.out.println(verify);
             //model.addAttribute("user", user);
             model.addAttribute("verifyError","Password do not match");
             return "user/add";
         }
     }
+*/
+        //Bonus
 
-
+        if(errors.hasErrors()){
+            return "user/add";
+        }
+            model.addAttribute("user", user);
+            return "user/index";
+    }
 }
